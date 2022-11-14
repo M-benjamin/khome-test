@@ -1,13 +1,16 @@
-import { Column, Entity } from 'typeorm';
+import { Schema, Prop, SchemaFactory } from '@nestjs/mongoose';
+import { Document } from 'mongoose';
 
-@Entity()
-export class User {
-  @Column()
+@Schema()
+export class User extends Document {
+  @Prop()
   firstname: string;
 
-  @Column()
+  @Prop()
   lastname: string;
 
-  @Column()
+  @Prop()
   email: string;
 }
+
+export const UserSchema = SchemaFactory.createForClass(User);
