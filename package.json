@@ -1,0 +1,8 @@
+{
+  "private": false,
+  "name": "khome-test",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {}
+}
