@@ -1,21 +1,18 @@
 {
-  "private": false,
+  "version": "1.0.0",
+  "description": "",
   "name": "khome-test",
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
     "install-server": "npm install --prefix khome-server",
     "install-client": "npm install --prefix khome-client",
     "install": "npm-run-all install-server install-client",
-    "server": "npm run watch --prefix khome-server",
+    "server": "npm run start:prod --prefix khome-server",
     "server-cluster": "npm run cluster --prefix khome-server",
     "client": "npm start --prefix khome-client",
     "build": "npm run build --prefix khome-client",
     "deploy": "npm-run-all --sequential build server",
     "deploy-cluster": "npm-run-all --sequential build server-cluster",
     "dev": "npm-run-all --parallel server client",
-    "test-old": "npm run test --prefix client && npm run test --prefix server",
     "test-client": "npm run test --prefix khome-client",
     "test-server": "npm run test --prefix khome-server",
     "test": "npm-run-all --sequential test-client test-server"
